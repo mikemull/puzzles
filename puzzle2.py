@@ -1,3 +1,7 @@
+'''
+Based on the idea that the lockers still open will be those corresponding to integers
+with an odd number of factors.  That turns out to be any integer that is a square.
+'''
 
 def factors(n): return [i for i in range(1,n+1) if n % i == 0]
 
