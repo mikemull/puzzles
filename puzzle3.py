@@ -15,7 +15,7 @@ def primefactors(x):
 
 def nfactors(s):
     ''' Number of factors.  Seriously. '''
-    return reduce( mul, (len(list(g))+1 for k,g in itertools.groupby(primefactors(s))) )
+    return s if s==1 else reduce( mul, (len(list(g))+1 for k,g in itertools.groupby(primefactors(s))) )
 
 def triangle_num():
     ''' Good ol' fashioned generator '''
@@ -27,7 +27,6 @@ def triangle_num():
 
 num_factors = 0
 tn = triangle_num()
-tn.next()
 while num_factors <= 500:
     x, n = tn.next()
     num_factors = nfactors(x)
